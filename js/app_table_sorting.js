@@ -36,6 +36,9 @@ const createRandomTable = () => {
   return table;
 };
 
+const table = createRandomTable();
+// const button = document.querySelector("button");
+// table.insertAdjacentElement("beforebegin", button);
+
 /* Use .prepend to let the button to be the last child of the body */
-let table = createRandomTable();
 document.body.prepend(table);

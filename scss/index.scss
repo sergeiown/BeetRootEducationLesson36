@@ -53,6 +53,16 @@ html {
       opacity: 0.6;
     }
 
+    table,
+    th,
+    td {
+      @extend %table;
+      text-align: center;
+      border: 1px solid #000;
+      border-collapse: collapse;
+      padding: 0.3rem;
+    }
+
     button {
       @extend %button;
       border: none;
