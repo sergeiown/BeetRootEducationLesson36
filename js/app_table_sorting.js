@@ -26,6 +26,7 @@ function createRandomTable() {
   /* table body */
   for (let i = 0; i < numberOfRows; i++) {
     const row = document.createElement("tr");
+
     for (let j = 0; j < numberOfColls; j++) {
       const cell = document.createElement("td");
       /* random cells content: digits or symbols */
@@ -38,6 +39,7 @@ function createRandomTable() {
       }
       row.appendChild(cell);
     }
+
     table.appendChild(row);
   }
 
