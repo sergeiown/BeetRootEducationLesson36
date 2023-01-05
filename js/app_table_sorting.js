@@ -75,6 +75,7 @@ function sortTable(col) {
     }
     if (shouldSwitch) {
       rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      /* switch rows position */
       switching = true;
     }
   }
