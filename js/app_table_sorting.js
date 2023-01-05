@@ -2,43 +2,82 @@
 
 const { floor, random } = Math;
 
-const createRandomTable = () => {
-  let table = document.createElement("table");
+function createRandomTable() {
+  const numberOfRows = floor(random() * 3) + 8; /* rnd from 8 to 10 */
+  const numberOfColls = floor(random() * 3) + 8;
 
-  /* Generate a random number of rows and columns from 8 to 10 */
-  let rows = floor(random() * 3) + 8;
-  let cols = floor(random() * 3) + 8;
+  const table = document.createElement("table");
 
   /* table header */
   let thead = document.createElement("thead");
   let tr = document.createElement("tr");
-  for (let i = 0; i < cols; i++) {
+
+  for (let i = 0; i < numberOfColls; i++) {
     let th = document.createElement("th");
     th.textContent = `Header ${i + 1}`;
+
+    /* Add event listener to the header */
+    th.addEventListener("click", () => sortTable(i));
     tr.appendChild(th);
   }
   thead.appendChild(tr);
   table.appendChild(thead);
 
   /* table body */
-  let tbody = document.createElement("tbody");
-  for (let i = 0; i < rows; i++) {
-    let tr = document.createElement("tr");
-    for (let j = 0; j < cols; j++) {
-      let td = document.createElement("td");
-      td.textContent = floor(random() * 100);
-      tr.appendChild(td);
+  for (let i = 0; i < numberOfRows; i++) {
+    const row = document.createElement("tr");
+    for (let j = 0; j < numberOfColls; j++) {
+      const cell = document.createElement("td");
+      /* random cells content: digits or symbols */
+      if (random() < 0.5) {
+        cell.textContent = floor(random() * 10);
+      } else {
+        cell.textContent = String.fromCharCode(
+          floor(random() * 26 + 65) /* ASCII 65 to 90: A to Z */
+        );
+      }
+      row.appendChild(cell);
     }
-    tbody.appendChild(tr);
+    table.appendChild(row);
   }
-  table.appendChild(tbody);
 
   return table;
-};
+}
+
+function sortTable(col) {
+  /*  access the first tag <table> of the document */
+  const table = document.getElementsByTagName("table")[0];
+  //   console.log(table);
+  let rows = table.rows;
+  //   console.log(rows);
+  let switching = true;
+  let shouldSwitch = true;
+  let x = ""; /* current row */
+  let y = ""; /* next row */
+  let i = 0;
+
+  while (switching) {
+    switching = false;
+    for (i = 1; i < rows.length - 1; i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("td")[col];
+      //   console.log(x);
+      y = rows[i + 1].getElementsByTagName("td")[col];
+      //   console.log(y);
+      if (x.textContent > y.textContent) {
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
 
 const table = createRandomTable();
-// const button = document.querySelector("button");
-// table.insertAdjacentElement("beforebegin", button);
+const button =
+  document.querySelector("a"); /* because <a> is a button wrapper (parent) */
 
-/* Use .prepend to let the button to be the last child of the body */
-document.body.prepend(table);
+button.parentNode.insertBefore(table, button);

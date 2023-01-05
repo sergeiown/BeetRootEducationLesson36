@@ -53,6 +53,15 @@ html {
       opacity: 0.6;
     }
 
+    table {
+      background-color: cornflowerblue;
+      box-shadow: 0 0 0.2rem #000;
+
+      th {
+        cursor: pointer;
+      }
+    }
+
     table,
     th,
     td {
