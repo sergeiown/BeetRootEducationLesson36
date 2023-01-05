@@ -3,7 +3,7 @@
 const textDisplay = document.getElementById("text-display");
 const textEditor = document.getElementById("text-editor");
 
-document.addEventListener("keydown", actionOnEvent);
+window.addEventListener("keydown", actionOnEvent);
 
 let isEditing = false;
 
