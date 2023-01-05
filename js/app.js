@@ -8,6 +8,7 @@ document.addEventListener("keydown", actionOnEvent);
 let isEditing = false;
 
 function actionOnEvent(event) {
+  // console.log(event);
   if (event.ctrlKey && event.key === "e") {
     event.preventDefault(); // Disable default behavior for Ctrl+E
     if (!isEditing) {

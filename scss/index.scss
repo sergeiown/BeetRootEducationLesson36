@@ -6,17 +6,50 @@ html {
 
   body {
     user-select: none;
-    max-width: 1200px;
-    width: 96%;
-    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 1rem;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/bg.svg) top left / auto auto repeat;
+
+    h1 {
+      @extend %title;
+      margin: 2rem 1rem 0 1rem;
+    }
+
+    div {
+      @extend %text;
+      width: 90%;
+      height: 90%;
+      max-width: 90%;
+      max-height: 90%;
+      min-width: 70%;
+      min-height: 70%;
+      margin: 2rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background-color: cornflowerblue;
+      opacity: 0.6;
+      overflow: auto;
+    }
 
     textarea {
-      width: 100%;
-      height: 100%;
+      @extend %text;
+      width: 90%;
+      height: 90%;
+      max-width: 90%;
+      max-height: 90%;
+      min-width: 70%;
+      min-height: 70%;
+      margin: 2rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background: cornflowerblue url(../img/editing_is_available.svg) center /
+        100% no-repeat;
+      opacity: 0.6;
     }
   }
 }
