@@ -8,7 +8,6 @@ html {
     user-select: none;
     width: 100vw;
     height: 100vh;
-    padding: 0 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,6 +31,7 @@ html {
       padding: 1rem;
       border-radius: 0.5rem;
       background-color: cornflowerblue;
+      box-shadow: 0 0 0.2rem #000;
       opacity: 0.6;
       overflow: auto;
     }
@@ -49,7 +49,24 @@ html {
       border-radius: 0.5rem;
       background: cornflowerblue url(../img/editing_is_available.svg) center /
         100% no-repeat;
+      box-shadow: 0 0 0.2rem #000;
       opacity: 0.6;
+    }
+
+    button {
+      @extend %button;
+      border: none;
+      border-radius: 0.5rem;
+      margin: 0 0 2rem 0;
+      transition: all ease-in-out 0.2s;
+
+      &:hover {
+        @extend %button-hover;
+      }
+
+      &:active {
+        @extend %button-active;
+      }
     }
   }
 }
