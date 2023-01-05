@@ -82,7 +82,7 @@ function sortTable(col) {
 }
 
 const table = createRandomTable();
-const button =
-  document.querySelector("a"); /* because <a> is a button wrapper (parent) */
+const button = document.querySelector("a");
+/* because <a> is a button wrapper (parent) */
 
 button.parentNode.insertBefore(table, button);
