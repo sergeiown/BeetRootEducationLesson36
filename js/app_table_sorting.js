@@ -64,6 +64,8 @@ function sortTable(col) {
       //   console.log(x);
       y = rows[i + 1].getElementsByTagName("td")[col];
       //   console.log(y);
+
+      //   console.log(Number(x.textContent));
       if (x.textContent > y.textContent) {
         shouldSwitch = true;
         break;
