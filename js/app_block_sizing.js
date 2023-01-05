@@ -4,12 +4,12 @@ const body = document.querySelector("body");
 const div = document.querySelector("div");
 
 let isResizing = false;
-let currentX;
-let currentY;
-let initialWidth;
-let initialHeight;
-let currentWidth;
-let currentHeight;
+let currentX = 0;
+let currentY = 0;
+let initialWidth = 0;
+let initialHeight = 0;
+let currentWidth = 0;
+let currentHeight = 0;
 
 div.addEventListener("mousedown", (event) => {
   /* checking that event is at the bottom right 50x50 px */

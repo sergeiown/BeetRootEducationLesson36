@@ -41,7 +41,8 @@ html {
       min-height: 30%;
       background: cornflowerblue url(../img/mouse_resize.svg) bottom right / 10%
         no-repeat;
-      // resize: both; // to make the div resizable like a textarea
+      // resize: both;
+      // to make the div resizable like a textarea
     }
 
     textarea {
