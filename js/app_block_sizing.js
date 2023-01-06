@@ -28,7 +28,6 @@ div.addEventListener("mousedown", (event) => {
     initialWidth = div.offsetWidth;
     initialHeight = div.offsetHeight;
 
-    /* not to forget to ask Misha about: */
     // initialWidth = parseInt(getComputedStyle(div).width, 10);
     // initialHeight = parseInt(getComputedStyle(div).height, 10);
   }

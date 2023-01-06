@@ -68,6 +68,8 @@ function sortTable(col) {
       //   console.log(y);
 
       //   console.log(Number(x.textContent));
+
+      /* I am lazy I decided not to improve further */
       if (x.textContent > y.textContent) {
         shouldSwitch = true;
         break;
