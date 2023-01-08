@@ -6,13 +6,97 @@ html {
 
   body {
     user-select: none;
-    max-width: 1200px;
-    width: 96%;
-    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/bg.svg) top left / auto auto repeat;
+
+    h1 {
+      @extend %title;
+      margin: 2rem 1rem 0 1rem;
+    }
+
+    div {
+      @extend %text;
+      width: 90%;
+      height: 90%;
+      max-width: 90%;
+      max-height: 90%;
+      min-width: 70%;
+      min-height: 70%;
+      margin: 2rem 2rem 0 2rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background-color: cornflowerblue;
+      box-shadow: 0 0 0.2rem #000;
+      opacity: 0.6;
+      overflow: auto;
+    }
+
+    div#resizable {
+      min-width: 30%;
+      min-height: 30%;
+      background: cornflowerblue url(../img/mouse_resize.svg) bottom right / 10%
+        no-repeat;
+      // resize: both;
+      // to make the div resizable like a textarea
+    }
+
+    textarea {
+      @extend %text;
+      width: 90%;
+      height: 90%;
+      max-width: 90%;
+      max-height: 90%;
+      min-width: 70%;
+      min-height: 70%;
+      margin: 2rem 2rem 0 2rem;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      background: cornflowerblue url(../img/editing_is_available.svg) center /
+        100% no-repeat;
+      box-shadow: 0 0 0.2rem #000;
+      opacity: 0.6;
+    }
+
+    table {
+      background-color: cornflowerblue;
+      box-shadow: 0 0 0.2rem #000;
+      margin: 2rem 0 0 0;
+
+      th {
+        cursor: pointer;
+      }
+    }
+
+    table,
+    th,
+    td {
+      @extend %table;
+      text-align: center;
+      border: 1px solid #000;
+      border-collapse: collapse;
+      padding: 0.3rem;
+    }
+
+    button {
+      @extend %button;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 2rem 0;
+      transition: all ease-in-out 0.2s;
+
+      &:hover {
+        @extend %button-hover;
+      }
+
+      &:active {
+        @extend %button-active;
+      }
+    }
   }
 }
 
